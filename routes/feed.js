@@ -7,7 +7,7 @@ const feedController = require('../controllers/feed');
 const router = express.Router();
 
 
-router.get('/get-banners', feedController.getBanners);
+router.post('/get-banners', feedController.getBanners);
 
 router.post('/create-banner', isAuth , feedController.postBanner);
 

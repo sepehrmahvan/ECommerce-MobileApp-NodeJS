@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
+const reportsRoutes = require('./routes/reports');
 const app = express();
 
 app.use(bodyParser.json());
@@ -21,7 +22,7 @@ app.use((req, res, next) => {
 
 app.use('/api/v1/feed', feedRoutes);
 app.use('/api/v1/auth', authRoutes);
-
+app.use('/api/v1/reports', reportsRoutes);
 
 mongoose.connect('mongodb://127.0.0.1:27017/bannerTJ').then((result) => {
     app.listen(8080);
